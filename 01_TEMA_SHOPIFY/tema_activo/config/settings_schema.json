@@ -1,0 +1,13 @@
+[
+  {
+    "name": "ART³",
+    "settings": [
+      {
+        "type": "text",
+        "id": "brand_note",
+        "label": "Nota de marca",
+        "default": "ART al Cubo · Colombia"
+      }
+    ]
+  }
+]

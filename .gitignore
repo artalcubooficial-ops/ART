@@ -1,0 +1,12 @@
+.env
+.env.*
+*.pem
+*.key
+cookies.json
+credentials.json
+node_modules/
+tmp/
+temp/
+cache/
+05_RESPALDOS/
+06_TRABAJO_EN_CURSO/

@@ -1,0 +1,16 @@
+<main class="catalog tienda-page">
+  <div class="section-head"><div><small>ART³ / TIENDA</small><h1>{{ page.title }}</h1></div><span>19 productos</span></div>
+  <div class="product-grid">
+    {% assign shown_codes = '|' %}
+    {% for product in collections.tienda.products %}
+      {% assign code = product.handle | slice: 0, 8 %}
+      {% if product.handle contains 'pm-os-01-' %}{% assign code = 'skip' %}{% endif %}
+      {% if product.handle contains 'pm-os-01' %}{% assign code = 'pm-os-01' %}{% endif %}
+      {% assign marker = '|' | append: code | append: '|' %}
+      {% unless code == 'skip' or shown_codes contains marker %}
+        {% assign shown_codes = shown_codes | append: code | append: '|' %}
+        <article class="product-card"><a href="{{ card_url }}"><div class="product-image">{% assign card_image = product.featured_image %}{% assign card_url = product.url %}{% if product.handle contains 'pm-os-06' %}{% assign card_image = all_products['pm-os-06-hodie-acid'].featured_image %}{% assign card_url = '/products/pm-os-06-hodie-acid' %}{% endif %}{% if card_image %}<img src="https://1101kw-m7.myshopify.com/cdn/shop/files/ImagendeChatGPT5oct2026_18_20_40.png?v=1791242059&width=900" loading="lazy" alt="{{ code }}">{% else %}<span>ART³</span>{% endif %}</div><h3>{{ code | upcase }}</h3><div class="product-meta"><span>{{ product.price | money }}</span><span>{% if product.available %}Disponible{% else %}Agotado{% endif %}</span></div></a></article>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</main>

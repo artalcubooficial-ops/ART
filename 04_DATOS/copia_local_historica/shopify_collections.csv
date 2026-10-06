@@ -1,0 +1,5 @@
+﻿title,handle,type,rule_field,rule_relation,rule_value,source
+Buzo,buzo,smart,product_type,equals,Buzo,MAESTRO DE PRODUCTOS
+Camiseta,camiseta,smart,product_type,equals,Camiseta,MAESTRO DE PRODUCTOS
+Esqueleto,esqueleto,smart,product_type,equals,Esqueleto,MAESTRO DE PRODUCTOS
+Oversize,oversize,smart,product_type,equals,Oversize,MAESTRO DE PRODUCTOS

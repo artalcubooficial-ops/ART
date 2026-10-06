@@ -1,0 +1,78 @@
+<main class="catalog tienda-page">
+  <div class="section-head">
+    <div><small>ART³ / TIENDA</small><h1>{{ page.title }}</h1></div>
+    <span>{{ collections.tienda.products_count }} productos</span>
+  </div>
+  <div class="product-grid">
+    {% assign shown_codes = '|' %}
+    {% for product in collections.tienda.products %}
+      {% assign code = '' %}
+      {% if product.handle contains 'oversize-pm-os-01-' %}{% assign code = 'skip' %}{% endif %}
+      {% if product.title contains 'PM-OS-01' and code == '' %}{% assign code = 'PM-OS-01' %}{% endif %}
+      {% if product.title contains 'PM-OS-02' %}{% assign code = 'PM-OS-02' %}{% endif %}
+      {% if product.title contains 'PM-OS-03' %}{% assign code = 'PM-OS-03' %}{% endif %}
+      {% if product.title contains 'PM-OS-04' %}{% assign code = 'PM-OS-04' %}{% endif %}
+      {% if product.title contains 'PM-OS-05' %}{% assign code = 'PM-OS-05' %}{% endif %}
+      {% if product.title contains 'PM-OS-06' %}{% assign code = 'PM-OS-06' %}{% endif %}
+      {% if product.title contains 'PM-OS-07' %}{% assign code = 'PM-OS-07' %}{% endif %}
+      {% if product.title contains 'PM-OS-08' %}{% assign code = 'PM-OS-08' %}{% endif %}
+      {% if product.title contains 'PM-OS-09' %}{% assign code = 'PM-OS-09' %}{% endif %}
+      {% if product.title contains 'PM-OS-10' %}{% assign code = 'PM-OS-10' %}{% endif %}
+      {% if product.title contains 'PM-OS-11' %}{% assign code = 'PM-OS-11' %}{% endif %}
+      {% if product.title contains 'PM-OS-12' %}{% assign code = 'PM-OS-12' %}{% endif %}
+      {% if product.title contains 'PM-OS-13' %}{% assign code = 'PM-OS-13' %}{% endif %}
+      {% if product.title contains 'PM-OS-14' %}{% assign code = 'PM-OS-14' %}{% endif %}
+      {% if product.title contains 'PM-OS-15' %}{% assign code = 'PM-OS-15' %}{% endif %}
+      {% if product.title contains 'PM-OS-16' %}{% assign code = 'PM-OS-16' %}{% endif %}
+      {% if product.title contains 'PM-OS-17' %}{% assign code = 'PM-OS-17' %}{% endif %}
+      {% if product.title contains 'PM-OS-18' %}{% assign code = 'PM-OS-18' %}{% endif %}
+      {% if product.title contains 'PM-OS-19' %}{% assign code = 'PM-OS-19' %}{% endif %}
+      {% assign marker = '|' | append: code | append: '|' %}
+      {% unless code == '' or code == 'skip' or shown_codes contains marker %}
+        {% assign shown_codes = shown_codes | append: code | append: '|' %}
+        {% assign card_product = product %}
+        {% assign card_url = product.url %}{% if code == 'PM-OS-03' %}{% assign card_url = '/products/pm-os-03-esmerilada' %}{% endif %}{% if code == 'PM-OS-06' %}{% assign card_url = '/products/pm-os-06-negro-acid-wash-1' %}{% endif %}
+        {% assign card_image = product.images.first %}
+        {% if code == 'PM-OS-03' %}
+          {% assign card_product = all_products['pm-os-03-esmerilada'] %}
+          {% assign card_image = card_product.images.first %}
+          {% assign card_hover = card_product.images[1] %}
+        {% endif %}
+        {% assign card_hover = product.images[1] %}
+        {% if code == 'PM-OS-05' %}
+  {% assign card_url = '/products/pm-os-05-negro' %}
+  {% assign card_product = all_products['pm-os-05-negro'] %}
+  {% assign card_image_url = 'https://cdn.shopify.com/s/files/1/1076/3888/2385/files/Imagen_de_ChatGPT_3_oct_2026_14_48_51.png?v=1791056528&width=900' %}
+  {% assign card_hover = card_product.images[1] %}
+{% endif %}
+{% if code == 'PM-OS-04' %}
+  {% assign card_url = '/products/pm-os-04-boxy-fit' %}
+  {% assign card_product = all_products['pm-os-04-boxy-fit'] %}
+  {% assign card_image_url = 'https://1101kw-m7.myshopify.com/cdn/shop/files/PM-OS-04_SESION_CORTA_03.png?v=1790133254&width=900' %}
+  {% assign card_hover = card_product.images[1] %}
+{% elsif code == 'PM-OS-02' %}
+          {% assign card_url = '/products/pm-os-02-camiseta' %}
+          {% assign card_product = all_products['pm-os-02-camiseta'] %}
+          {% assign card_image_url = 'https://1101kw-m7.myshopify.com/cdn/shop/files/Create_group_photo_with_models_20260929175333.jpg?v=1790722023&width=900' %}
+          {% assign card_hover = card_product.images[1] %}
+        {% endif %}
+        <article class="product-card">
+          <a href="{{ card_url }}">
+            <div class="product-image">
+              <div class="product-image__frame">
+                {% if code == 'PM-OS-02' or code == 'PM-OS-04' or code == 'PM-OS-05' %}
+                  <img src="{{ card_image_url }}" alt="{{ code }}" loading="lazy" class="product-image__primary">
+                {% elsif card_image %}
+                  {% if code == 'PM-OS-06' %}{{ all_products['pm-os-06-negro-acid-wash-1'].featured_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: code, class: 'product-image__primary' }}{% else %}{{ card_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: code, class: 'product-image__primary' }}{% endif %}
+                {% else %}<span>ART³</span>{% endif %}
+                {% if card_hover %}{{ card_hover | image_url: width: 900 | image_tag: loading: 'lazy', alt: code, class: 'product-image__secondary' }}{% endif %}
+              </div>
+            </div>
+            <h3>{{ code }}</h3>
+            <div class="product-meta"><span>{{ card_product.price | money }}</span><span>{% if card_product.available %}Disponible{% else %}Agotado{% endif %}</span></div>
+          </a>
+        </article>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</main>

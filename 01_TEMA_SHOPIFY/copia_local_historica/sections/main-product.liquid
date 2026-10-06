@@ -1,0 +1,68 @@
+<main class="product-page">
+  <div>
+    <div class="product-gallery" data-product-gallery>
+      {% for image in product.images %}
+        <a id="product-image-{{ forloop.index }}" class="product-image" data-lightbox-image href="{{ image | image_url: width: 2000 }}">
+          {{ image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '480,720,960,1200', sizes: '(min-width: 850px) 45vw, 100vw', alt: image.alt | default: product.title | escape }}
+        </a>
+      {% else %}<div class="product-image"><span>ART³</span></div>{% endfor %}
+    </div>
+    {% if product.images.size > 1 %}<div class="product-thumbnails" aria-label="Miniaturas del producto">{% for image in product.images %}<a href="#product-image-{{ forloop.index }}" data-lightbox-thumb="{{ forloop.index0 }}" aria-label="Ir a imagen {{ forloop.index }}"><img src="{{ image | image_url: width: 160 }}" alt="{{ image.alt | default: product.title | escape }}" loading="lazy"></a>{% endfor %}</div>{% endif %}
+    {% if product.images.size > 0 %}
+      <div class="product-lightbox" data-product-lightbox hidden role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+        <button type="button" class="product-lightbox__close" data-lightbox-close aria-label="Cerrar">×</button>
+        <button type="button" class="product-lightbox__prev" data-lightbox-prev aria-label="Imagen anterior">←</button>
+        <img class="product-lightbox__image" data-lightbox-display alt="">
+        <button type="button" class="product-lightbox__next" data-lightbox-next aria-label="Imagen siguiente">→</button>
+      </div>
+      <script>
+        (() => {
+          const gallery = [...document.querySelectorAll('[data-lightbox-image]')];
+          const box = document.querySelector('[data-product-lightbox]');
+          if (!gallery.length || !box) return;
+          const display = box.querySelector('[data-lightbox-display]');
+          let index = 0;
+          const show = (next) => {
+            index = (next + gallery.length) % gallery.length;
+            const image = gallery[index].querySelector('img');
+            display.src = gallery[index].href;
+            display.alt = image?.alt || '{{ product.title | escape }}';
+          };
+          const open = (event, next = 0) => {
+            event?.preventDefault();
+            show(next);
+            box.hidden = false;
+            document.body.classList.add('lightbox-open');
+            box.querySelector('[data-lightbox-close]').focus();
+          };
+          const close = () => { box.hidden = true; document.body.classList.remove('lightbox-open'); };
+          gallery.forEach((link, i) => link.addEventListener('click', (event) => open(event, i)));
+          document.querySelectorAll('[data-lightbox-thumb]').forEach((thumb) => thumb.addEventListener('click', (event) => {
+            event.preventDefault();
+            open(event, Number(thumb.dataset.lightboxThumb));
+          }));
+          box.querySelector('[data-lightbox-close]').addEventListener('click', close);
+          box.querySelector('[data-lightbox-prev]').addEventListener('click', () => show(index - 1));
+          box.querySelector('[data-lightbox-next]').addEventListener('click', () => show(index + 1));
+          box.addEventListener('click', (event) => { if (event.target === box) close(); });
+          document.addEventListener('keydown', (event) => {
+            if (box.hidden) return;
+            if (event.key === 'Escape') close();
+            if (event.key === 'ArrowLeft') show(index - 1);
+            if (event.key === 'ArrowRight') show(index + 1);
+          });
+        })();
+      </script>
+    {% endif %}
+  </div>
+  <div class="product-info"><small>{{ product.type }}</small><h1>{{ product.title }}</h1><p class="price">{{ product.selected_or_first_available_variant.price | money }}</p><div class="product-description">{{ product.description }}</div>{% assign code = product.handle | split: '-' | slice: 0, 3 | join: '-' %}{% case code %}{% when 'pm-os-01' %}{% assign colors = 'tabaco|negro|rojo|blanco' | split: '|' %}{% when 'pm-os-02' %}{% assign colors = 'camel|negro' | split: '|' %}{% when 'pm-os-03' %}{% assign colors = 'azul-claro|beige|gris-plomo|marfil|negro|verde-manzana' | split: '|' %}{% when 'pm-os-04' %}{% assign colors = 'beige|marfil|negro' | split: '|' %}{% when 'pm-os-05' %}{% assign colors = 'beige|blanco|negro' | split: '|' %}{% when 'pm-os-06' %}{% assign colors = 'negro-acid-wash' | split: '|' %}{% when 'pm-os-07' %}{% assign colors = 'durazno|negro' | split: '|' %}{% when 'pm-os-08' %}{% assign colors = 'negro|blanco' | split: '|' %}{% when 'pm-os-09' %}{% assign colors = 'marfil|negro' | split: '|' %}{% when 'pm-os-10' %}{% assign colors = 'blanco|verde-botella|rojo|negro' | split: '|' %}{% when 'pm-os-11' %}{% assign colors = 'vino-tinto-acid-wash|negro-acid-wash|gris-acid-wash|azul-claro-acid-wash|azul-rey-acid-wash' | split: '|' %}{% when 'pm-os-12' %}{% assign colors = 'gris-acid-wash|negro-acid-wash' | split: '|' %}{% when 'pm-os-13' %}{% assign colors = 'verde-militar-acid-wash|gris-acid-wash' | split: '|' %}{% when 'pm-os-14' %}{% assign colors = 'azul-navy|azul-rey|rojo|negro|marfil' | split: '|' %}{% when 'pm-os-15' %}{% assign colors = 'blanco|negro' | split: '|' %}{% when 'pm-os-16' %}{% assign colors = 'marfil|negro' | split: '|' %}{% when 'pm-os-17' %}{% assign colors = 'negro|blanco' | split: '|' %}{% when 'pm-os-18' %}{% assign colors = 'taupe' | split: '|' %}{% when 'pm-os-19' %}{% assign colors = 'rojo' | split: '|' %}{% endcase %}{% if colors %}<nav class="art-color-links" aria-label="Elegir color">{% for color in colors %}<a href="/products/{{ code }}-{{ color }}">{{ color | replace: '-', ' ' | capitalize }}</a>{% endfor %}</nav>{% endif %}<form method="post" action="{{ routes.cart_add_url }}"><label for="variant">Selecciona variante</label><select id="variant" name="id">{% for variant in product.variants %}<option value="{{ variant.id }}">{{ variant.title }} · Disponible por encargo</option>{% endfor %}</select><button type="submit">Añadir al carrito</button></form><p class="made-to-order-note">Todas las prendas pueden solicitarse por encargo. Confirmaremos disponibilidad y tiempos después de tu pedido.</p><details><summary>Envíos y cambios</summary><p>Consulta las condiciones vigentes de ART³ antes de comprar.</p></details><details><summary>Guía de tallas</summary><p>Selecciona la referencia y revisa la guía correspondiente antes de confirmar.</p></details></div>
+  <script>
+    (() => {
+      const guide = [...document.querySelectorAll('.product-info details')]
+        .find((item) => item.querySelector('summary')?.textContent.trim() === 'Guía de tallas');
+      if (!guide) return;
+      const code = '{{ code | upcase }}';
+      if (code && code !== 'PM') guide.querySelector('summary').textContent = `Guía de tallas ${code}`;
+    })();
+  </script>
+</main>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{ page_description | default: shop.description | escape }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:description" content="{{ page_description | default: shop.description | escape }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  {% if page_image %}<meta property="og:image" content="{{ page_image | image_url: width: 1200 }}">{% endif %}
+  <title>{{ page_title }}{% unless page_title contains shop.name %} · {{ shop.name }}{% endunless %}</title>
+  {{ content_for_header }}
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {% if template.name == 'product' %}<script type="application/ld+json">{{ product | structured_data }}</script>{% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="{{ routes.root_url }}">ART<span>³</span></a>
+    <nav class="main-nav" aria-label="Navegación principal"><details><summary>Tienda</summary><div class="nav-panel"><small>TIENDA</small><a href="/pages/tienda?filtro=art">Diseños ART³</a><a href="/pages/tienda">Prendas lisas</a></div></details><details><summary>Personaliza</summary><div class="nav-panel"><small>PERSONALIZA</small><a href="/pages/personaliza-la-prenda">Diseña tu prenda</a><a href="/pages/personaliza-la-prenda">Estampa tu propia prenda</a><a href="/pages/personaliza-la-prenda">Pedidos para grupos</a></div></details><details><summary>Empresas</summary><div class="nav-panel"><small>EMPRESAS</small><a href="/pages/personaliza-la-prenda">Uniformes</a><a href="/pages/personaliza-la-prenda">Merch</a><a href="/pages/personaliza-la-prenda">Pedidos por volumen</a></div></details><details><summary>ART³</summary><div class="nav-panel"><small>ART³</small><a href="/pages/manifiesto">Nuestra historia</a><a href="/pages/contacto">Contacto</a></div></details><a class="social-link" href="https://www.tiktok.com/@art.al.cubo" target="_blank" rel="noopener">TikTok</a><a class="social-link" href="https://www.instagram.com/artalcubooficial/" target="_blank" rel="noopener">Instagram</a></nav>
+    <a class="cart-link" href="{{ routes.cart_url }}" aria-label="Carrito" data-cart-open>Carrito · <span data-cart-count>{{ cart.item_count }}</span></a>
+  </header>
+  {{ content_for_layout }}
+  <aside class="cart-drawer" data-cart-drawer aria-label="Carrito de compras" aria-hidden="true">
+    <div class="cart-drawer__backdrop" data-cart-close></div>
+    <div class="cart-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+      <div class="cart-drawer__header"><h2 id="cart-drawer-title">Tu selección</h2><button type="button" data-cart-close aria-label="Cerrar carrito">×</button></div>
+      <div class="cart-drawer__body" data-cart-body>
+        {% if cart.item_count == 0 %}<p>Tu carrito está vacío.</p>{% else %}{% for item in cart.items %}<div class="cart-drawer__line"><span>{{ item.quantity }} × {{ item.product.title }} — {{ item.final_line_price | money }}</span></div>{% endfor %}<p><strong>Subtotal: {{ cart.total_price | money }}</strong></p>{% endif %}
+      </div>
+      <a class="button" href="{{ routes.cart_url }}">Ver carrito y checkout</a>
+    </div>
+  </aside>
+  <script>
+    (() => { const drawer = document.querySelector('[data-cart-drawer]'); if (!drawer) return; const open = () => { drawer.setAttribute('aria-hidden','false'); drawer.classList.add('is-open'); }; const close = () => { drawer.setAttribute('aria-hidden','true'); drawer.classList.remove('is-open'); }; document.querySelectorAll('[data-cart-open]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); open(); })); drawer.querySelectorAll('[data-cart-close]').forEach(el => el.addEventListener('click', close)); document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); }); })();
+  </script>
+  <footer><strong>ART³</strong><span>ART al Cubo · Colombia</span></footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.main-nav details > summary').forEach(function (summary) {
+      var label = summary.textContent.trim().toLowerCase();
+      if (label === 'tienda' || label === 'personaliza' || label === 'empresas' || label === 'art³') {
+        if (label === 'empresas') {
+          summary.parentElement.remove();
+          return;
+        }
+        if (label === 'art³') {
+          var artLink = document.createElement('a');
+          artLink.href = '/pages/manifiesto';
+          artLink.textContent = 'ART³';
+          summary.parentElement.replaceWith(artLink);
+          return;
+        }
+        var link = document.createElement('a');
+        link.href = label === 'tienda' ? '/pages/tienda' : '/pages/personaliza-la-prenda';
+        link.textContent = label === 'tienda' ? 'Tienda' : 'Personaliza';
+        summary.parentElement.replaceWith(link);
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<main class="product-page">
+  <div>
+    <div class="product-gallery" data-product-gallery>
+      {% for image in product.images %}
+        {% assign image_key = image.alt | append: ' ' | append: image.src | downcase %}
+        {% assign image_color = 'other' %}
+        {% if product.handle contains 'pm-os-01' %}
+          {% if forloop.index == 2 %}{% assign image_color = 'rojo' %}{% endif %}
+          {% if forloop.index == 3 %}{% assign image_color = 'blanco' %}{% endif %}
+          {% if forloop.index == 4 %}{% assign image_color = 'negro' %}{% endif %}
+          {% if forloop.index == 5 %}{% assign image_color = 'tabaco' %}{% endif %}
+        {% endif %}
+        {% if product.handle contains 'pm-os-04' or product.handle contains 'boxy-fit-pm-os-04' %}
+          {% if forloop.index == 2 %}{% assign image_color = 'azul-claro' %}{% endif %}
+          {% if forloop.index == 3 %}{% assign image_color = 'marfil' %}{% endif %}
+          {% if forloop.index == 4 %}{% assign image_color = 'negro' %}{% endif %}
+        {% endif %}
+        {% if product.handle contains 'pm-os-02' %}
+          {% if forloop.index == 2 %}{% assign image_color = 'negro' %}{% endif %}
+          {% if forloop.index == 3 %}{% assign image_color = 'camel' %}{% endif %}
+        {% endif %}
+        {% if product.handle == 'pm-os-03-esmerilada' %}
+  {% if forloop.index == 1 %}{% assign image_color = 'other' %}{% endif %}
+  {% if forloop.index == 2 %}{% assign image_color = 'azul-claro' %}{% endif %}
+  {% if forloop.index == 3 %}{% assign image_color = 'beige' %}{% endif %}
+  {% if forloop.index == 4 %}{% assign image_color = 'verde-manzana' %}{% endif %}
+  {% if forloop.index == 5 %}{% assign image_color = 'negro' %}{% endif %}
+  {% if forloop.index == 6 %}{% assign image_color = 'marfil' %}{% endif %}
+  {% if forloop.index == 7 %}{% assign image_color = 'gris-plomo' %}{% endif %}
+{% endif %}
+        {% if image_key contains 'box-bei' or image_key contains 'beige' %}{% assign image_color = 'beige' %}{% endif %}
+        {% if image_key contains 'box-bla' or image_key contains 'marfil' or image_key contains 'ivory' %}{% assign image_color = 'marfil' %}{% endif %}
+        {% if image_key contains 'box-neg' or image_key contains 'negro' or image_key contains 'black' %}{% assign image_color = 'negro' %}{% endif %}
+        {% if product.handle != 'pm-os-06-negro-acid-wash-1' or forloop.index <= 4 %}{% assign pm06_image_href = image | image_url: width: 2000 %}{% if handle == 'pm-os-06-hodie-acid' %}{% if forloop.index == 1 %}{% assign pm06_image_href = 'https://1101kw-m7.myshopify.com/cdn/shop/files/ImagendeChatGPT5oct2026_18_20_40.png?v=1791242059&width=2000' %}{% elsif forloop.index == 2 %}{% assign pm06_image_href = '/products/pm-os-06-azul-petroleo' %}{% elsif forloop.index == 3 %}{% assign pm06_image_href = '/products/pm-os-06-gris' %}{% elsif forloop.index == 4 %}{% assign pm06_image_href = '/products/pm-os-06-negro-acid-wash-1' %}{% endif %}{% endif %}<a id="product-image-{{ forloop.index }}" class="product-image" data-color-key="{% if handle == 'pm-os-06-hodie-acid' and forloop.index == 1 %}other{% elsif handle == 'pm-os-06-hodie-acid' and forloop.index == 2 %}azul-petroleo{% elsif handle == 'pm-os-06-hodie-acid' and forloop.index == 3 %}gris{% elsif handle == 'pm-os-06-hodie-acid' and forloop.index == 4 %}negro{% else %}{{ image_color }}{% endif %}" data-image-alt="{{ image.alt | default: image.filename | default: product.title | escape }}" data-image-source="{{ image.src | escape }}" href="{{ pm06_image_href }}">
+                    {% if product.handle == 'pm-os-06-hodie-acid' and forloop.index == 1 %}<img src="https://1101kw-m7.myshopify.com/cdn/shop/files/ImagendeChatGPT5oct2026_18_20_40.png?v=1791242059&width=2000" loading="lazy" alt="{{ image.alt | default: product.title | escape }}">{% elsif product.handle == 'pm-os-06-hodie-acid' and forloop.index == 2 %}<img src="https://1101kw-m7.myshopify.com/cdn/shop/files/exec-5968b5d9-8244-4378-b6d1-49ad23d22a4e.png?v=1791238870&width=2000" loading="lazy" alt="{{ image.alt | default: product.title | escape }}">{% elsif product.handle == 'pm-os-06-hodie-acid' and forloop.index == 3 %}<img src="https://1101kw-m7.myshopify.com/cdn/shop/files/exec-1362a24f-7139-419e-8751-fc6e5bef2fd1.png?v=1791233728&width=2000" loading="lazy" alt="{{ image.alt | default: product.title | escape }}">{% elsif product.handle == 'pm-os-06-hodie-acid' and forloop.index == 4 %}<img src="https://1101kw-m7.myshopify.com/cdn/shop/files/exec-0b875228-16b5-4ed2-ad95-bd300d65afcf.png?v=1791238870&width=2000" loading="lazy" alt="{{ image.alt | default: product.title | escape }}">{% else %}{{ image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '480,720,960,1200', sizes: '(min-width: 850px) 45vw, 100vw', alt: image.alt | default: product.title | escape }}{% endif %}
+                          </a>
+{% endif %}                                {% else %}<div class="product-image"><span>ART³</span></div>{% endfor %}
+    <div class="photo-lightbox" data-photo-lightbox hidden><button type="button" class="lightbox-close" data-lightbox-close aria-label="Cerrar">×</button><button type="button" class="lightbox-arrow lightbox-prev" data-lightbox-prev aria-label="Foto anterior">←</button><img data-lightbox-image alt=""><button type="button" class="lightbox-arrow lightbox-next" data-lightbox-next aria-label="Foto siguiente">→</button><button type="button" class="lightbox-back" data-lightbox-back>← Volver</button></div>
+    {% if product.images.size > 1 %}<div class="product-thumbnails" aria-label="Miniaturas del producto">{% for image in product.images %}{% if product.handle != 'pm-os-06-negro-acid-wash-1' or forloop.index <= 4 %}{% assign thumb_key = image.alt | append: ' ' | append: image.src | downcase %}{% assign thumb_color = 'other' %}{% if product.handle == 'pm-os-03-esmerilada' %}{% if forloop.index == 1 %}{% assign thumb_color = 'azul-claro' %}{% endif %}{% if forloop.index == 2 %}{% assign thumb_color = 'beige' %}{% endif %}{% if forloop.index == 3 %}{% assign thumb_color = 'verde-manzana' %}{% endif %}{% if forloop.index == 4 %}{% assign thumb_color = 'verde-manzana' %}{% endif %}{% if forloop.index == 5 %}{% assign thumb_color = 'negro' %}{% endif %}{% if forloop.index == 6 %}{% assign thumb_color = 'gris-plomo' %}{% endif %}{% if forloop.index == 7 %}{% assign thumb_color = 'marfil' %}{% endif %}{% endif %}{% if product.handle == 'pm-os-03-esmerilada' %}{% if forloop.index == 1 %}{% assign thumb_color = 'azul-claro' %}{% endif %}{% if forloop.index == 2 %}{% assign thumb_color = 'beige' %}{% endif %}{% if forloop.index == 3 %}{% assign thumb_color = 'verde-manzana' %}{% endif %}{% if forloop.index == 4 %}{% assign thumb_color = 'verde-manzana' %}{% endif %}{% if forloop.index == 5 %}{% assign thumb_color = 'negro' %}{% endif %}{% if forloop.index == 6 %}{% assign thumb_color = 'gris-plomo' %}{% endif %}{% if forloop.index == 7 %}{% assign thumb_color = 'marfil' %}{% endif %}{% endif %}{% if thumb_key contains 'box-bei' or thumb_key contains 'beige' %}{% assign thumb_color = 'beige' %}{% endif %}{% if thumb_key contains 'box-bla' or thumb_key contains 'marfil' or thumb_key contains 'ivory' %}{% assign thumb_color = 'marfil' %}{% endif %}{% if thumb_key contains 'box-neg' or thumb_key contains 'negro' or thumb_key contains 'black' %}{% assign thumb_color = 'negro' %}{% endif %}<a data-color-key="{{ thumb_color }}" data-image-alt="{{ image.alt | default: product.title | escape }}" data-image-source="{{ image.src | escape }}" href="#product-image-{{ forloop.index }}" aria-label="Ir a imagen {{ forloop.index }}"><img src="{{ image | image_url: width: 160 }}" alt="{{ image.alt | default: product.title | escape }}" loading="lazy"></a>{% endif %}{% endfor %}</div>{% endif %}
+  </div>
+      <div class="product-info"><small>{{ product.type }}</small><h1>{{ product.title }}</h1><p class="price">{{ product.selected_or_first_available_variant.price | money }}</p><div class="product-description">{{ product.description }}</div>{% if product.handle == 'pm-os-04-boxy-fit' or product.handle == 'boxy-fit-pm-os-04' %}<nav class="art-color-links" aria-label="Elegir color" style="display:flex;gap:10px;flex-wrap:wrap;margin:18px 0"><a href="/products/boxy-fit-pm-os-04-beige" style="padding:8px 12px;border:1px solid #aaa;text-decoration:none;color:inherit">Beige</a><a href="/products/boxy-fit-pm-os-04-marfil" style="padding:8px 12px;border:1px solid #aaa;text-decoration:none;color:inherit">Marfil</a><a href="/products/boxy-fit-pm-os-04-negro" style="padding:8px 12px;border:1px solid #aaa;text-decoration:none;color:inherit">Negro</a></nav>{% elsif product.handle == 'pm-os-06-hodie-acid' %}<nav class="art-color-links" aria-label="Elegir color" style="display:flex;gap:10px;flex-wrap:wrap;margin:18px 0"><a href="/products/pm-os-06-negro-acid-wash-1" data-color-value="Negro Acid Wash" style="padding:8px 12px;border:1px solid #aaa;text-decoration:none;color:inherit">Negro Acid Wash</a><a href="/products/pm-os-06-azul-petroleo" data-color-value="Azul Petróleo" style="padding:8px 12px;border:1px solid #aaa;text-decoration:none;color:inherit">Azul Petróleo</a><a href="/products/pm-os-06-gris" data-color-value="Gris" style="padding:8px 12px;border:1px solid #aaa;text-decoration:none;color:inherit">Gris</a></nav>{% endif %}<form method="post" action="{{ routes.cart_add_url }}"><label for="product-color">Color</label><select id="product-color" data-option-index="0">{% assign color_values = '' %}{% for variant in product.variants %}{% unless color_values contains variant.option1 %}<option value="{{ variant.option1 | escape }}">{{ variant.option1 }}</option>{% assign color_values = color_values | append: variant.option1 | append: '|' %}{% endunless %}{% endfor %}</select><label for="product-size">Talla</label><select id="product-size" data-option-index="1">{% assign size_values = '' %}{% for variant in product.variants %}{% unless size_values contains variant.option2 %}<option value="{{ variant.option2 | escape }}">{{ variant.option2 }}</option>{% assign size_values = size_values | append: variant.option2 | append: '|' %}{% endunless %}{% endfor %}</select><input type="hidden" id="variant" name="id" value="{{ product.selected_or_first_available_variant.id }}"><button type="submit"{% unless product.available %} disabled{% endunless %}>Añadir al carrito</button></form><details><summary>Envíos y cambios</summary><p>Consulta las condiciones vigentes de ART³ antes de comprar.</p></details><details><summary>Guía de tallas</summary><p>Selecciona la referencia y revisa la guía correspondiente antes de confirmar.</p></details></div>
+</main>
+<script>
+  (() => {
+    const colorSelect = document.querySelector('#product-color');
+    const sizeSelect = document.querySelector('#product-size');
+    const variantInput = document.querySelector('#variant');
+    const addToCartButton = document.querySelector('.product-info form button[type="submit"]');
+    if (addToCartButton) { addToCartButton.classList.add('art-add-to-cart'); addToCartButton.textContent = 'Agregar al carro de compras'; }
+    if ({{ product.handle | json }} === 'pm-os-01-oversize' || {{ product.handle | json }}.startsWith('oversize-pm-os-01-')) {
+      const sizeGuide = [...document.querySelectorAll('.product-info details')].find(item => item.querySelector('summary')?.textContent.trim() === 'Guía de tallas');
+      if (sizeGuide) sizeGuide.innerHTML = '<summary>Guía de tallas PM-OS-01</summary><div class="pm01-size-guide"><p><strong>Oversize sencillo · Gramaje 260 g · Código PM-OS-01</strong></p><div class="pm01-size-table-wrap"><table><thead><tr><th>Talla</th><th>Ancho pecho</th><th>Longitud manga</th><th>Longitud frente</th><th>Hombro</th></tr></thead><tbody><tr><td>S</td><td>50</td><td>22</td><td>66,5</td><td>20,5</td></tr><tr><td>M</td><td>52</td><td>23</td><td>68,5</td><td>21</td></tr><tr><td>L</td><td>54</td><td>24</td><td>70,5</td><td>21,5</td></tr><tr><td>XL</td><td>56</td><td>25</td><td>72,5</td><td>22</td></tr></tbody></table></div></div>';
+    }
+    if ({{ product.handle | json }} === 'pm-os-04-boxy-fit' || {{ product.handle | json }}.startsWith('boxy-fit-pm-os-04-')) {
+      const sizeGuide = [...document.querySelectorAll('.product-info details')].find(item => item.querySelector('summary')?.textContent.trim() === 'Guía de tallas');
+      if (sizeGuide) sizeGuide.innerHTML = '<summary>Guía de tallas PM-OS-04</summary><div class="pm01-size-guide"><p><strong>Boxy fit · Gramaje 260 g · Código PM-OS-04</strong></p><div class="pm01-size-table-wrap"><table><thead><tr><th>Talla</th><th>Ancho pecho</th><th>Longitud manga</th><th>Longitud frente</th><th>Hombro</th></tr></thead><tbody><tr><td>S</td><td>49,5</td><td>21,5</td><td>54</td><td>20</td></tr><tr><td>M</td><td>51,5</td><td>22,5</td><td>56</td><td>20,5</td></tr><tr><td>L</td><td>53,5</td><td>23,5</td><td>58</td><td>21</td></tr><tr><td>XL</td><td>55,5</td><td>24,5</td><td>60</td><td>21,5</td></tr></tbody></table></div></div>';
+      if (sizeSelect) { sizeSelect.innerHTML = ''; ['S','M','L','XL'].forEach(value => sizeSelect.add(new Option(value, value))); }
+    }
+    const handle = {{ product.handle | json }};
+    const pm01Descriptions = {
+      'oversize-pm-os-01-negro': 'Camiseta oversize ART³ PM-OS-01 en color negro. Su silueta amplia y contemporánea ofrece comodidad, presencia y un estilo urbano fácil de combinar. Ideal para looks casuales y modernos.',
+      'oversize-pm-os-01-tabaco': 'Camiseta oversize ART³ PM-OS-01 en tono tabaco. Un color cálido y elegante que aporta personalidad sin perder versatilidad. Su corte amplio garantiza comodidad y una apariencia moderna.',
+      'oversize-pm-os-01-rojo': 'Camiseta oversize ART³ PM-OS-01 en color rojo. Su tono intenso convierte una prenda básica en el punto focal del outfit. Cómoda, llamativa y perfecta para un estilo urbano con actitud.',
+      'oversize-pm-os-01-blanco': 'Camiseta oversize ART³ PM-OS-01 en color blanco. Una pieza esencial, limpia y versátil, diseñada para combinar fácilmente con cualquier estilo. Su corte amplio brinda comodidad y una estética contemporánea.'
+    };
+    if (pm01Descriptions[handle]) document.querySelector('.product-description').textContent = pm01Descriptions[handle];
+    const sizeGuides = {
+      'pm-os-02': {title:'Camiseta', gramaje:'230 g', rows:[['S','41','24','69','14,5'],['M','43','25','71','15'],['L','45','26','73','15,5'],['XL','47','27','75','16']]},
+      'pm-os-03': {title:'Esmerilada', gramaje:'300 g', rows:[['S','50,5','22,5','68,5','22'],['M','52,5','23,5','70,5','22,5'],['L','54,5','24,5','72,5','23'],['XL','56,5','25,5','74,5','23,5']]},
+      'pm-os-05': {title:'Tank', gramaje:'260 g', rows:[['S','47','—','69','16,5'],['M','49','—','71','17'],['L','51','—','73','17,5'],['XL','53','—','75','18']]},
+      'pm-os-06': {title:'Buzo acid wash', gramaje:'320 g', rows:[['S','41','56','58','11'],['M','43','58','60','12'],['L','45','60','62','13'],['XL','47','62','64','14']]},
+      'pm-os-07': {title:'Buzo', gramaje:'320 g', rows:[['S','41','58','58','11'],['M','43','60','60','12'],['L','45','62','62','13'],['XL','47','64','64','14']]},
+      'pm-os-08': {title:'Crop top', gramaje:'230 g', rows:[['S','45,5','21','42','14,5'],['M','47,5','22','44','15'],['L','49,5','23','46','15,5'],['XL','51,5','24','48','16']]},
+      'pm-os-09': {title:'Crop top', gramaje:'260 g', rows:[['S','43','21','37','17'],['M','45','22','39','17,5'],['L','47','23','41','18'],['XL','51','24','43','18,5']]},
+      'pm-os-10': {title:'Line', gramaje:'270 g', rows:[['S','49','19','70','19'],['M','51','20','72','19,5'],['L','53','21','74','20'],['XL','55','22','76','20,5']]},
+      'pm-os-11': {title:'Camiseta acid wash', gramaje:'270 g', rows:[['S','49,5','23','67','19,5'],['M','51,5','24','69','20'],['L','53,5','25','71','20,5'],['XL','55,5','26','73','21']]},
+      'pm-os-12': {title:'Tank acid wash', gramaje:'240 g', rows:[['S','52','—','70','19'],['M','54','—','72','19,5'],['L','56','—','73','20'],['XL','58','—','75','20,5']]},
+      'pm-os-13': {title:'Crop top acid wash', gramaje:'240 g', rows:[['S','43','21','37','17'],['M','45','22','39','17,5'],['L','47','23','41','18'],['XL','51','24','43','18,5']]},
+      'pm-os-14': {title:'Buzo', gramaje:'300 g', rows:[['S','41','58','58','11'],['M','43','60','60','12'],['L','45','62','62','13'],['XL','47','64','64','14']]},
+      'pm-os-17': {title:'Camiseta gramaje alto', gramaje:'180 g', rows:[['S','34','23','48','10'],['M','35','24','49','11'],['L','36','25','50','12'],['XL','37','26','51','13']]},
+      'pm-os-18': {title:'Qatar fit', gramaje:'250 g', rows:[['S','48','26','62','19'],['M','50','27','64','20'],['L','52','28','66','21'],['XL','54','29','68','22']]},
+      'pm-os-19': {title:'Peruana', gramaje:'250 g', rows:[['S','50','28','65','21'],['M','52','29','67','22'],['L','54','30','69','23'],['XL','56','31','71','24']]}
+    };
+    const code = Object.keys(sizeGuides).find(item => handle.includes(item));
+    if (code) {
+      const guide = sizeGuides[code];
+      const sizeGuide = [...document.querySelectorAll('.product-info details')].find(item => item.querySelector('summary')?.textContent.trim() === 'Guía de tallas');
+      if (sizeGuide) {
+        sizeGuide.innerHTML = `<summary>Guía de tallas ${code.toUpperCase()}</summary><div class="pm01-size-guide"><p><strong>${guide.title} · Gramaje ${guide.gramaje} · Código ${code.toUpperCase()}</strong></p><div class="pm01-size-table-wrap"><table><thead><tr><th>Talla</th><th>Ancho pecho</th><th>Longitud manga</th><th>Longitud frente</th><th>Hombro</th></tr></thead><tbody>${guide.rows.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`;
+      }
+    }
+    const variants = {{ product.variants | json }};
+    const normalize = value => (value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const pm01ColorHandles = {TABACO:'oversize-pm-os-01-tabaco', NEGRO:'oversize-pm-os-01-negro', ROJO:'oversize-pm-os-01-rojo', BLANCO:'oversize-pm-os-01-blanco'};
+    if (handle.startsWith('oversize-pm-os-01-')) {
+      if (colorSelect && (colorSelect.options.length === 0 || (colorSelect.options.length === 1 && colorSelect.options[0].textContent.trim() === 'Default Title'))) { colorSelect.innerHTML = ''; ['Tabaco','Negro','Rojo','Blanco'].forEach(value => colorSelect.add(new Option(value, value))); }
+      if (sizeSelect) { sizeSelect.innerHTML = ''; ['S','M','L','XL'].forEach(value => sizeSelect.add(new Option(value, value))); }
+    }
+    if ((handle.includes('pm-os-01') || handle.includes('pm-os-04') || handle.includes('boxy-fit-pm-os-04')) && !document.querySelector('.product-info .art-color-links')) {
+      const nav = document.createElement('nav');
+      nav.className = 'art-color-links';
+      nav.setAttribute('aria-label', 'Elegir color');
+      nav.innerHTML = handle.includes('pm-os-04') || handle.includes('boxy-fit-pm-os-04') ? '<a href="/products/boxy-fit-pm-os-04-beige" data-color-value="Beige">Beige</a><a href="/products/boxy-fit-pm-os-04-marfil" data-color-value="Marfil">Marfil</a><a href="/products/boxy-fit-pm-os-04-negro" data-color-value="Negro">Negro</a>' : '<a href="/products/oversize-pm-os-01-tabaco" data-color-value="Tabaco">Tabaco</a><a href="/products/oversize-pm-os-01-negro" data-color-value="Negro">Negro</a><a href="/products/oversize-pm-os-01-rojo" data-color-value="Rojo">Rojo</a><a href="/products/oversize-pm-os-01-blanco" data-color-value="Blanco">Blanco</a>';
+      document.querySelector('.product-info .product-description')?.after(nav);
+    }
+    const genericColorSets = {
+      'pm-os-02':['Camel','Negro'], 'pm-os-03':['Azul claro','Beige','Gris plomo','Marfil','Negro','Verde manzana'],
+      'pm-os-05':['Beige','Blanco','Negro'], 'pm-os-06':['Negro Acid Wash','Azul Petróleo','Gris'], 'pm-os-07':['Durazno','Negro'],
+      'pm-os-08':['Negro','Blanco'], 'pm-os-09':['Marfil','Negro'], 'pm-os-10':['Blanco','Verde botella','Rojo','Negro'],
+      'pm-os-11':['Vino tinto Acid Wash','Negro Acid Wash','Gris Acid Wash','Azul claro Acid Wash','Azul rey Acid Wash'],
+      'pm-os-12':['Gris Acid Wash','Negro Acid Wash'], 'pm-os-13':['Verde militar Acid Wash','Gris Acid Wash'],
+      'pm-os-14':['Azul navy','Azul rey','Rojo','Negro','Marfil'], 'pm-os-15':['Blanco','Negro'],
+      'pm-os-16':['Marfil','Negro'], 'pm-os-17':['Negro','Blanco'], 'pm-os-18':['Taupe'], 'pm-os-19':['Rojo']
+    };
+    const genericCode = Object.keys(genericColorSets).find(code => handle.includes(code));
+    if (genericCode && !document.querySelector('.product-info .art-color-links')) {
+      const nav = document.createElement('nav'); nav.className = 'art-color-links'; nav.setAttribute('aria-label', 'Elegir color');
+      nav.innerHTML = genericColorSets[genericCode].map(color => `<a href="/products/${genericCode.includes('pm-os-06') && color === 'Negro Acid Wash' ? 'pm-os-06-negro-acid-wash-1' : genericCode + '-' + color.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}" data-color-value="${color}">${color}</a>`).join('');
+      document.querySelector('.product-info .product-description')?.after(nav);
+    }
+    if (genericCode === 'pm-os-05') {
+      document.querySelectorAll('.product-info .art-color-links a').forEach(link => {
+        if (link.textContent.trim().toLowerCase() === 'negro') link.setAttribute('href', '/products/pm-os-05-negro?color=negro');
+      });
+    }
+    const pm03HandleFixes = {'/products/pm-os-03-azl-claro':'/products/pm-os-03-azul-claro','/products/pm-os-03-maril':'/products/pm-os-03-marfil','/products/pm-os-07-drazno':'/products/pm-os-07-durazno-1','/products/pm-os-09-maril':'/products/pm-os-09-marfil'};
+    document.querySelectorAll('.product-info .art-color-links a').forEach(link => { const fixed = pm03HandleFixes[link.getAttribute('href')]; if (fixed) link.setAttribute('href', fixed); });
+    if (genericCode === 'pm-os-02') {
+      const details = [...document.querySelectorAll('.product-info details')];
+      const guide = details.find(item => item.querySelector('summary')?.textContent.toLowerCase().includes('guía')) || details[details.length - 1];
+      details.filter(item => item !== guide && item.querySelector('summary')?.textContent.toLowerCase().includes('guía')).forEach(item => item.remove());
+      if (guide) guide.querySelector('summary').textContent = 'Guía de tallas PM-OS-02';
+      if (!details.some(item => item.querySelector('summary')?.textContent.toLowerCase().includes('envíos'))) {
+        const shipping = document.createElement('details');
+        shipping.innerHTML = '<summary>Envíos y cambios</summary><p>Consulta las condiciones vigentes de ART³ antes de comprar.</p>';
+        document.querySelector('.product-info')?.insertBefore(shipping, guide || null);
+      }
+    }
+    const isMasterProduct = handle === 'pm-os-01-oversize' || handle === 'pm-os-04-boxy-fit' || handle === 'pm-os-02-camiseta' || handle === 'pm-os-06-negro-acid-wash-1';
+    const isolatedColorProduct = ['boxy-fit-pm-os-04-beige','boxy-fit-pm-os-04-marfil','boxy-fit-pm-os-04-negro','oversize-pm-os-01-tabaco','oversize-pm-os-01-negro','oversize-pm-os-01-rojo','oversize-pm-os-01-blanco','pm-os-03-negro','pm-os-03-marfil','pm-os-05-beige','pm-os-05-blanco','pm-os-05-negro'].includes(handle);
+    const gallery = [...document.querySelectorAll('[data-product-gallery] .product-image')];
+    const thumbs = [...document.querySelectorAll('.product-thumbnails a[data-image-alt]')];
+    if (handle.includes('pm-os-01')) {
+      const photoColors = ['other','rojo','blanco','negro','tabaco'];
+      thumbs.forEach((thumb,index) => { if (photoColors[index]) thumb.dataset.colorKey = photoColors[index]; });
+    }
+    if (handle.includes('pm-os-04') || handle.includes('boxy-fit-pm-os-04')) {
+      const photoColors = ['other','beige','marfil','negro'];
+      thumbs.forEach((thumb,index) => { if (photoColors[index]) thumb.dataset.colorKey = photoColors[index]; });
+    }
+    if (!gallery.length) return;
+    if (handle === 'pm-os-05-negro' && new URLSearchParams(window.location.search).get('color') !== 'negro') {
+      const pm05MasterImages = [
+        { src: 'https://cdn.shopify.com/s/files/1/1076/3888/2385/files/Imagen_de_ChatGPT_3_oct_2026_14_48_51.png?v=1791056528&width=2000', href: '' },
+        { src: 'https://cdn.shopify.com/s/files/1/1076/3888/2385/files/01_frontal_cuerpo_completo_eeb4cbee-004e-4293-8ff3-c9264ca63c8c.png?v=1791055788&width=2000', href: '/products/pm-os-05-beige' },
+        { src: 'https://cdn.shopify.com/s/files/1/1076/3888/2385/files/CARRUSEL_HOMBRE_01_TAN-BLA-001.png?v=1790997950&width=2000', href: '/products/pm-os-05-blanco' },
+        { src: 'https://cdn.shopify.com/s/files/1/1076/3888/2385/files/02_tres_cuartos_frontal.png?v=1791000238&width=2000', href: '/products/pm-os-05-negro?color=negro' }
+      ];
+      gallery.forEach((slide, index) => {
+        const anchor = slide.closest('a') || slide;
+        if (index >= pm05MasterImages.length) {
+          anchor.remove();
+          return;
+        }
+        const image = slide.querySelector('img');
+        if (image) { image.src = pm05MasterImages[index].src; image.srcset = pm05MasterImages[index].src; }
+        if (pm05MasterImages[index].href) {
+          const goToColor = event => { event.preventDefault(); window.location.href = pm05MasterImages[index].href; };
+          anchor.addEventListener('click', goToColor, true);
+        }
+      });
+      thumbs.forEach((thumb, index) => {
+        if (index >= pm05MasterImages.length) {
+          thumb.remove();
+          return;
+        }
+        const image = thumb.querySelector('img');
+        if (image) { image.src = pm05MasterImages[index].src; image.srcset = pm05MasterImages[index].src; }
+        if (pm05MasterImages[index].href) {
+          const goToColor = event => { event.preventDefault(); window.location.href = pm05MasterImages[index].href; };
+          thumb.addEventListener('click', goToColor, true);
+        }
+      });
+    }
+    if (handle === 'pm-os-05-negro' && new URLSearchParams(window.location.search).get('color') !== 'negro') {
+      const pm05MasterImages = [
+        { src: 'https://cdn.shopify.com/s/files/1/1076/3888/2385/files/Imagen_de_ChatGPT_3_oct_2026_14_48_51.png?v=1791056528&width=2000', href: '' },
+        { src: 'https://cdn.shopify.com/s/files/1/1076/3888/2385/files/01_frontal_cuerpo_completo_eeb4cbee-004e-4293-8ff3-c9264ca63c8c.png?v=1791055788&width=2000', href: '/products/pm-os-05-beige' },
+        { src: 'https://cdn.shopify.com/s/files/1/1076/3888/2385/files/CARRUSEL_HOMBRE_01_TAN-BLA-001.png?v=1790997950&width=2000', href: '/products/pm-os-05-blanco' },
+        { src: 'https://cdn.shopify.com/s/files/1/1076/3888/2385/files/02_tres_cuartos_frontal.png?v=1791000238&width=2000', href: '/products/pm-os-05-negro?color=negro' }
+      ];
+      gallery.forEach((slide, index) => {
+        const anchor = slide.closest('a') || slide;
+        if (index >= pm05MasterImages.length) {
+          anchor.remove();
+          return;
+        }
+        const image = slide.querySelector('img');
+        if (image) { image.src = pm05MasterImages[index].src; image.srcset = pm05MasterImages[index].src; }
+        if (pm05MasterImages[index].href) {
+          const goToColor = event => { event.preventDefault(); window.location.href = pm05MasterImages[index].href; };
+          anchor.addEventListener('click', goToColor, true);
+        }
+      });
+      thumbs.forEach((thumb, index) => {
+        if (index >= pm05MasterImages.length) {
+          thumb.remove();
+          return;
+        }
+        const image = thumb.querySelector('img');
+        if (image) { image.src = pm05MasterImages[index].src; image.srcset = pm05MasterImages[index].src; }
+        if (pm05MasterImages[index].href) {
+          const goToColor = event => { event.preventDefault(); window.location.href = pm05MasterImages[index].href; };
+          thumb.addEventListener('click', goToColor, true);
+        }
+      });
+    }
+    const lightbox = document.querySelector('[data-photo-lightbox]');
+    const lightboxImage = lightbox?.querySelector('[data-lightbox-image]');
+    let lightboxIndex = 0;
+    const openLightbox = index => { lightboxIndex = index; const image = gallery[lightboxIndex]?.querySelector('img'); if (!image || !lightbox) return; lightboxImage.src = image.currentSrc || image.src; lightboxImage.alt = image.alt; lightbox.hidden = false; document.body.style.overflow = 'hidden'; };
+    const closeLightbox = () => { if (lightbox) lightbox.hidden = true; document.body.style.overflow = ''; };
+    gallery.forEach((item,index) => item.addEventListener('click', event => {
+      event.preventDefault();
+      const photoColor = handle === 'pm-os-01-oversize' && index === 2 ? 'blanco' : item.dataset.colorKey;
+      if (handle === 'pm-os-06-negro-acid-wash-1') {
+        const pm06Routes = {
+          'azul-petroleo': '/products/pm-os-06-azul-petroleo',
+          'gris': '/products/pm-os-06-gris',
+          'negro': '/products/pm-os-06-hodie-acid'
+        };
+        if (pm06Routes[photoColor]) { window.location.href = pm06Routes[photoColor]; return; }
+      } if (handle === 'pm-os-02-camiseta' && index === 1) { window.location.href = '/products/pm-os-02-negro'; return; } if (handle === 'pm-os-02-camiseta' && index === 2) { window.location.href = '/products/pm-os-02-camel'; return; } if (handle.startsWith('pm-os-02-')) { openLightbox(index); return; } if (handle === 'pm-os-02-camiseta' && index === 1) { window.location.href = '/products/pm-os-02-negro'; return; } if (handle === 'pm-os-02-camiseta' && index === 2) { window.location.href = '/products/pm-os-02-camel'; return; } if (handle.startsWith('pm-os-02-')) { openLightbox(index); return; } if (handle.startsWith('pm-os-02-')) { openLightbox(index); return; }
+      const colorValue = {tabaco:'Tabaco', negro:'Negro', rojo:'Rojo', blanco:'Blanco', camel:'Camel', beige:'Beige', marfil:'Marfil'}[photoColor]; if (handle === 'pm-os-03-esmerilada') { const pm03Routes = {'azul-claro':'azul-claro','beige':'beige','verde-manzana':'verde-manzana','negro':'negro','marfil':'marfil','gris-plomo':'gris-plomo'}; if (photoColor !== 'other' && pm03Routes[photoColor]) { window.location.href = '/products/pm-os-03-' + pm03Routes[photoColor]; return; } }
+      if (colorValue && colorSelect && !isolatedColorProduct) {
+        if (handle.includes('pm-os-04') || handle.includes('boxy-fit-pm-os-04') || handle === 'pm-os-01-oversize') {
+          const colorHandles = handle === 'pm-os-01-oversize' ? {tabaco:'oversize-pm-os-01-tabaco', negro:'oversize-pm-os-01-negro', rojo:'oversize-pm-os-01-rojo', blanco:'oversize-pm-os-01-blanco'} : {beige:'boxy-fit-pm-os-04-beige', marfil:'boxy-fit-pm-os-04-marfil', negro:'boxy-fit-pm-os-04-negro'};
+          if (colorHandles[photoColor]) { window.location.href = `/products/${colorHandles[photoColor]}`; return; }
+        }
+        if (genericCode) { const pm03Handles = {'azul-claro':'pm-os-03-esmerilada', beige:'pm-os-03-beige', 'verde-manzana':'pm-os-03-verde-manzana', negro:'pm-os-03-negro', marfil:'pm-os-03-marfil', 'gris-plomo':'pm-os-03-gris-plomo'}; const target = genericCode === 'pm-os-03' && pm03Handles[photoColor] ? `/products/${pm03Handles[photoColor]}` : `/products/${genericCode}-${normalize(colorValue).replace(/[^a-z0-9]+/g, '-')}`; window.location.assign(target); return; }
+        colorSelect.value = colorValue;
+        syncVariant();
+        document.querySelector('.product-info')?.scrollIntoView({behavior:'smooth', block:'center'});
+        return;
+      }
+      openLightbox(index);
+    }));
+    thumbs.forEach(thumb => thumb.addEventListener('click', event => {
+      const photoColor = thumb.dataset.colorKey;
+      if (handle === 'pm-os-06-negro-acid-wash-1') {
+        const pm06Routes = {
+          'azul-petroleo': '/products/pm-os-06-azul-petroleo',
+          'gris': '/products/pm-os-06-gris',
+          'negro': '/products/pm-os-06-hodie-acid'
+        };
+        if (pm06Routes[photoColor]) { window.location.href = pm06Routes[photoColor]; return; }
+      }
+      const colorValue = {tabaco:'Tabaco', negro:'Negro', rojo:'Rojo', blanco:'Blanco', camel:'Camel', beige:'Beige', marfil:'Marfil'}[photoColor]; if (handle === 'pm-os-03-esmerilada') { const pm03Routes = {'azul-claro':'azul-claro','beige':'beige','verde-manzana':'verde-manzana','negro':'negro','marfil':'marfil','gris-plomo':'gris-plomo'}; if (photoColor !== 'other' && pm03Routes[photoColor]) { window.location.href = '/products/pm-os-03-' + pm03Routes[photoColor]; return; } }
+      if (colorValue && colorSelect) {
+        event.preventDefault();
+        if (handle.includes('pm-os-04') || handle.includes('boxy-fit-pm-os-04') || handle === 'pm-os-01-oversize') {
+          const colorHandles = handle === 'pm-os-01-oversize' ? {tabaco:'oversize-pm-os-01-tabaco', negro:'oversize-pm-os-01-negro', rojo:'oversize-pm-os-01-rojo', blanco:'oversize-pm-os-01-blanco'} : {beige:'boxy-fit-pm-os-04-beige', marfil:'boxy-fit-pm-os-04-marfil', negro:'boxy-fit-pm-os-04-negro'};
+          if (colorHandles[photoColor]) { window.location.href = `/products/${colorHandles[photoColor]}`; return; }
+        }
+        colorSelect.value = colorValue; syncVariant();
+      }
+    }));
+    lightbox?.querySelector('[data-lightbox-close]')?.addEventListener('click', closeLightbox);
+    lightbox?.querySelector('[data-lightbox-back]')?.addEventListener('click', closeLightbox);
+    lightbox?.querySelector('[data-lightbox-prev]')?.addEventListener('click', () => openLightbox((lightboxIndex - 1 + gallery.length) % gallery.length));
+    lightbox?.querySelector('[data-lightbox-next]')?.addEventListener('click', () => openLightbox((lightboxIndex + 1) % gallery.length));
+    lightbox?.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', event => { if (!lightbox || lightbox.hidden) return; if (event.key === 'Escape') closeLightbox(); if (event.key === 'ArrowLeft') openLightbox((lightboxIndex - 1 + gallery.length) % gallery.length); if (event.key === 'ArrowRight') openLightbox((lightboxIndex + 1) % gallery.length); });
+    const prevButton = document.querySelector('[data-gallery-prev]');
+    const nextButton = document.querySelector('[data-gallery-next]');
+    const backButton = document.querySelector('[data-gallery-back]');
+    const goTo = direction => { const visible = gallery.filter(item => !item.hidden); if (!visible.length) return; const current = visible.findIndex(item => item === document.querySelector('[data-product-gallery] .product-image.is-current'));
+      const next = visible[(current < 0 ? 0 : current + direction + visible.length) % visible.length]; gallery.forEach(item => item.classList.remove('is-current')); next.classList.add('is-current'); next.scrollIntoView({behavior:'smooth',block:'center'}); };
+    prevButton?.addEventListener('click', () => goTo(-1)); nextButton?.addEventListener('click', () => goTo(1)); backButton?.addEventListener('click', () => window.history.back());
+    gallery[0]?.classList.add('is-current');
+    if (!colorSelect || !sizeSelect || !variantInput) return;
+    const colorAliases = {
+      camel: ['camel', 'beige'],
+      beige: ['beige', 'box-bei', 'boxy-bei', 'bei'],
+      marfil: ['marfil', 'hueso', 'ivory', 'marf', 'box-bla', 'box-bla-001'],
+      negro: ['negro', 'black', 'blk', 'box-neg', 'box-neg-002']
+    };
+    const imageKey = item => normalize(`${item.dataset.imageAlt || ''} ${item.dataset.imageSource || ''} ${item.querySelector('img')?.alt || ''}`);
+    const emptyMessage = document.createElement('p');
+    emptyMessage.className = 'product-gallery-empty';
+    emptyMessage.textContent = 'Fotos próximamente para este color.';
+    gallery[0]?.parentElement?.appendChild(emptyMessage);
+    const updateGallery = () => {
+      if (isMasterProduct || isolatedColorProduct) {
+        gallery.forEach(item => item.hidden = false);
+        thumbs.forEach(item => item.hidden = false);
+        emptyMessage.hidden = true;
+        return;
+      }
+      const title = normalize(colorSelect.value || '');
+      const color = Object.keys(colorAliases).find(key => title.includes(key));
+      const aliases = color ? colorAliases[color] : [];
+      const matches = color ? gallery.filter(item => item.dataset.colorKey === color || aliases.some(alias => imageKey(item).includes(alias))) : [];
+      const visible = matches.length ? matches : gallery;
+      gallery.forEach(item => item.hidden = !visible.includes(item));
+      thumbs.forEach(item => item.hidden = !visible.some(image => image.id === item.getAttribute('href')?.slice(1)));
+      emptyMessage.hidden = visible.length > 0;
+    };
+    const variantOption = (variant, index) => variant?.options?.[index] ?? (index === 0 ? variant?.option1 : variant?.option2) ?? '';
+    const syncVariant = () => {
+      const color = colorSelect.value;
+      const size = sizeSelect.value;
+      const match = variants.find(v => variantOption(v, 0) === color && variantOption(v, 1) === size) || variants.find(v => variantOption(v, 0) === color);
+      if (match) { variantInput.value = match.id; updateGallery(); }
+    };
+    colorSelect.addEventListener('change', syncVariant);
+    document.querySelectorAll('.product-info .art-color-links a').forEach(button => button.addEventListener('click', event => {
+      const value = button.dataset.colorValue || button.textContent.trim();
+      if (handle.includes('pm-os-04') || handle.includes('boxy-fit-pm-os-04') || handle === 'pm-os-01-oversize' || handle.startsWith('oversize-pm-os-01-')) {
+        const handles = (handle === 'pm-os-01-oversize' || handle.startsWith('oversize-pm-os-01-')) ? pm01ColorHandles : {BEIGE:'boxy-fit-pm-os-04-beige', MARFIL:'boxy-fit-pm-os-04-marfil', NEGRO:'boxy-fit-pm-os-04-negro'};
+        const handle = handles[value.toUpperCase()];
+        if (handle) { event.preventDefault(); window.location.href = `/products/${handle}`; return; }
+      }
+      event.preventDefault();
+      colorSelect.value = value;
+      syncVariant();
+      document.querySelector('[data-product-gallery]')?.scrollIntoView({behavior:'smooth',block:'start'});
+    }));
+    if (genericCode) document.querySelectorAll('.product-info .art-color-links a').forEach(button => button.addEventListener('click', event => { event.preventDefault(); const destination = button.getAttribute('href'); if (destination) window.location.assign(destination); }));
+    sizeSelect.addEventListener('change', syncVariant);
+    document.querySelector('.product-info form')?.addEventListener('submit', () => syncVariant());
+    const current = variants.find(v => String(v.id) === String(variantInput.value));
+    if (current) { colorSelect.value = current.options?.[0] || colorSelect.value; sizeSelect.value = current.options?.[1] || sizeSelect.value; }
+    if (genericCode) {
+      const handleColor = handle.split(`${genericCode}-`)[1];
+      const matchingColor = genericColorSets[genericCode].find(color => normalize(color) === normalize(handleColor || ''));
+      if (matchingColor && [...colorSelect.options].some(option => normalize(option.value) === normalize(matchingColor))) colorSelect.value = matchingColor;
+    }
+    updateGallery();
+  })();
+</script>
+<script>
+(() => {
+  const handle = {{ product.handle | json }};
+  if (handle !== 'pm-os-02-camiseta' && !handle.startsWith('pm-os-02-')) return;
+
+  const info = document.querySelector('.product-info');
+  if (!info) return;
+
+  const details = [...info.querySelectorAll('details')];
+  const guides = details.filter(item => item.querySelector('summary')?.textContent.toLowerCase().includes('guía'));
+  const guide = guides[0];
+
+  guides.slice(1).forEach(item => item.remove());
+
+  if (guide) guide.querySelector('summary').textContent = 'Guía de tallas PM-OS-02';
+
+  if (!details.some(item => item.querySelector('summary')?.textContent.toLowerCase().includes('envíos'))) {
+    const shipping = document.createElement('details');
+    shipping.innerHTML = '<summary>Envíos y cambios</summary><p>Consulta las condiciones vigentes de ART³ antes de comprar.</p>';
+    info.insertBefore(shipping, guide || null);
+  }
+})();
+</script>

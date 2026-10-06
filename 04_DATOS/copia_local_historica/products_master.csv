@@ -1,0 +1,97 @@
+﻿Handle,Title,Body (HTML),Vendor,Product Category,Type,Tags,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Image Src,Image Alt Text
+pm-os-01-oversize,Oversize PM-OS-01,<p>Prenda ART3 Oversize. Gramaje: 260.0 g. Referencia PM-OS-01.</p>,IBK,Apparel & Accessories,Oversize,"ART3,Oversize,A",FALSE,Color,Cafe tabaco,Talla,S,PM-OS-01-Cafe tabaco-S,260,shopify,1,70000.0,,TRUE,TRUE,,Oversize PM-OS-01
+pm-os-01-oversize,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Cafe tabaco,Talla,M,PM-OS-01-Cafe tabaco-M,260,shopify,0,70000.0,,TRUE,TRUE,,
+pm-os-01-oversize,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Marfil,Talla,M,PM-OS-01-Marfil-M,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-01-oversize,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Marfil,Talla,L,PM-OS-01-Marfil-L,260,shopify,4,70000.0,,TRUE,TRUE,,
+pm-os-01-oversize,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,S,PM-OS-01-Negro-S,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-01-oversize,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,M,PM-OS-01-Negro-M,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-01-oversize,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,L,PM-OS-01-Negro-L,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-01-oversize,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,L,PM-OS-01-Negro-L,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-02-camiseta,Camiseta PM-OS-02,<p>Prenda ART3 Camiseta. Gramaje: 230.0 g. Referencia PM-OS-02.</p>,ARITEX,Apparel & Accessories,Camiseta,"ART3,Camiseta,C",FALSE,Color,Beige,Talla,M,PM-OS-02-Beige-M,230,shopify,1,55000.0,,TRUE,TRUE,,Camiseta PM-OS-02
+pm-os-02-camiseta,,,,Apparel & Accessories,,"ART3,Camiseta,C",FALSE,Color,Negro,Talla,S,PM-OS-02-Negro-S,230,shopify,1,55000.0,,TRUE,TRUE,,
+pm-os-02-camiseta,,,,Apparel & Accessories,,"ART3,Camiseta,C",FALSE,Color,Negro,Talla,M,PM-OS-02-Negro-M,230,shopify,2,55000.0,,TRUE,TRUE,,
+pm-os-02-camiseta,,,,Apparel & Accessories,,"ART3,Camiseta,C",FALSE,Color,Negro,Talla,L,PM-OS-02-Negro-L,230,shopify,0,55000.0,,TRUE,TRUE,,
+pm-os-02-camiseta,,,,Apparel & Accessories,,"ART3,Camiseta,C",FALSE,Color,Negro,Talla,XL,PM-OS-02-Negro-XL,230,shopify,0,55000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,Esmerilada PM-OS-03,"<p>La ART esmerilada azul claro de 300 gramos combina una estética limpia y contemporánea con una silueta amplia tipo streetwear. Su acabado ligeramente desgastado aporta profundidad visual. Tiene logo ART minimalista al frente y aplicación de mayor tamaño en la espalda, cuello reforzado, mangas amplias y costuras limpias.</p>",IBK,Apparel & Accessories,Oversize,"ART3,Oversize,A",FALSE,Color,Azul claro,Talla,L,PM-OS-03-Azul claro-L,300,shopify,1,80000.0,,TRUE,TRUE,https://p16-common-sign.tiktokcdn.com/tos-alisg-i-photomode-sg/c6db0e36f9464ba7b4611fb65cbeb96b~tplv-photomode-image-cover:640:0:q70.webp?dr=17580&refresh_token=e8e705ab&x-expires=1791316800&x-signature=MTSXFOZUJxbsGgDd32wGfX0%2Fo5w%3D&t=5897f7ec&ps=d5b8ac02&shp=d05b14bd&shcp=8aecc5ac&idc=my2&s=TIKTOK_FOR_DEVELOPER&biz_tag=tt_photomode&sc=cover,Esmerilada PM-OS-03
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Azul claro,Talla,M,PM-OS-03-Azul claro-M,300,shopify,1,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Azul claro,Talla,S,PM-OS-03-Azul claro-S,300,shopify,1,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Beige,Talla,L,PM-OS-03-Beige-L,300,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Beige,Talla,M,PM-OS-03-Beige-M,300,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Gris raton,Talla,L,PM-OS-03-Gris raton-L,300,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Gris raton,Talla,M,PM-OS-03-Gris raton-M,300,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Marfil,Talla,XL,PM-OS-03-Marfil-XL,300,shopify,1,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Marfil,Talla,L,PM-OS-03-Marfil-L,300,shopify,10,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Marfil,Talla,S,PM-OS-03-Marfil-S,300,shopify,3,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Marfil,Talla,M,PM-OS-03-Marfil-M,300,shopify,0,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,M,PM-OS-03-Negro-M,300,shopify,8,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,S,PM-OS-03-Negro-S,300,shopify,3,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,M,PM-OS-03-Negro-M,300,shopify,1,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,M,PM-OS-03-Negro-M,300,shopify,1,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,L,PM-OS-03-Negro-L,300,shopify,3,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,XL,PM-OS-03-Negro-XL,300,shopify,1,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Verde manzana,Talla,L,PM-OS-03-Verde manzana-L,300,shopify,1,80000.0,,TRUE,TRUE,,
+pm-os-03-esmerilada,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Verde manzana,Talla,M,PM-OS-03-Verde manzana-M,300,shopify,1,80000.0,,TRUE,TRUE,,
+pm-os-04-boxy-fit,Boxy fit PM-OS-04,<p>Prenda ART3 Boxy fit. Gramaje: 260.0 g. Referencia PM-OS-04.</p>,IBK,Apparel & Accessories,Oversize,"ART3,Oversize,B",FALSE,Color,Beige,Talla,M,PM-OS-04-Beige-M,260,shopify,1,70000.0,,TRUE,TRUE,,Boxy fit PM-OS-04
+pm-os-04-boxy-fit,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Marfil,Talla,S,PM-OS-04-Marfil-S,260,shopify,-1,70000.0,,TRUE,TRUE,,
+pm-os-04-boxy-fit,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Marfil,Talla,M,PM-OS-04-Marfil-M,260,shopify,0,70000.0,,TRUE,TRUE,,
+pm-os-04-boxy-fit,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Marfil,Talla,L,PM-OS-04-Marfil-L,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-04-boxy-fit,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Negro,Talla,S,PM-OS-04-Negro-S,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-04-boxy-fit,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Negro,Talla,M,PM-OS-04-Negro-M,260,shopify,2,70000.0,,TRUE,TRUE,,
+pm-os-04-boxy-fit,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Negro,Talla,L,PM-OS-04-Negro-L,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-04-boxy-fit,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Negro,Talla,M,PM-OS-04-Negro-M,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-04-boxy-fit,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Negro,Talla,M,PM-OS-04-Negro-M,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-04-boxy-fit,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Negro,Talla,M,PM-OS-04-Negro-M,260,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-05-tank,Tank PM-OS-05,<p>Prenda ART3 Tank. Gramaje: 260.0 g. Referencia PM-OS-05.</p>,IBK,Apparel & Accessories,Esqueleto,"ART3,Esqueleto,C",FALSE,Color,Beige,Talla,S,PM-OS-05-Beige-S,260,shopify,1,65000.0,,TRUE,TRUE,,Tank PM-OS-05
+pm-os-05-tank,,,,Apparel & Accessories,,"ART3,Esqueleto,C",FALSE,Color,Marfil,Talla,L,PM-OS-05-Marfil-L,260,shopify,2,65000.0,,TRUE,TRUE,,
+pm-os-05-tank,,,,Apparel & Accessories,,"ART3,Esqueleto,C",FALSE,Color,Marfil,Talla,S,PM-OS-05-Marfil-S,260,shopify,1,65000.0,,TRUE,TRUE,,
+pm-os-05-tank,,,,Apparel & Accessories,,"ART3,Esqueleto,C",FALSE,Color,Negro,Talla,S,PM-OS-05-Negro-S,260,shopify,1,65000.0,,TRUE,TRUE,,
+pm-os-05-tank,,,,Apparel & Accessories,,"ART3,Esqueleto,C",FALSE,Color,Negro,Talla,M,PM-OS-05-Negro-M,260,shopify,1,65000.0,,TRUE,TRUE,,
+pm-os-06-hodie-acid,Hodie acid PM-OS-06,<p>Prenda ART3 Hodie acid. Gramaje: 320.0 g. Referencia PM-OS-06.</p>,IBK,Apparel & Accessories,Buzo,"ART3,Buzo,C",FALSE,Color,Único,Talla,Única,PM-OS-06-Único-Única,320,shopify,0,120000.0,,TRUE,TRUE,,Hodie acid PM-OS-06
+pm-os-07-hodie-basic,Hodie basic PM-OS-07,"<p>Hoodie ART azul navy de 100% algodón, con estética limpia y urbana. Incluye silueta amplia y relajada, capucha ajustable, bolsillo canguro, puños acanalados, logo ART blanco pequeño al frente y logo de gran formato en la espalda. Diseño unisex para uso diario.</p>",IBK,Apparel & Accessories,Buzo,"ART3,Buzo,C",FALSE,Color,Único,Talla,Única,PM-OS-07-Único-Única,320,shopify,0,115000.0,,TRUE,TRUE,https://p16-common-sign.tiktokcdn.com/tos-alisg-i-photomode-sg/cdd633f10ea44009ab746477bccb9102~tplv-photomode-image-cover:640:0:q70.webp?dr=17580&refresh_token=5cfeccf&x-expires=1791316800&x-signature=jf75t0zH1Y%2Bx%2BElz3bOuS1o6r58%3D&t=5897f7ec&ps=d5b8ac02&shp=d05b14bd&shcp=8aecc5ac&idc=my2&s=TIKTOK_FOR_DEVELOPER&biz_tag=tt_photomode&sc=cover,Hodie basic PM-OS-07
+pm-os-08-crop-top,Crop top PM-OS-08,<p>Prenda ART3 Crop top. Gramaje: 230.0 g. Referencia PM-OS-08.</p>,ARITEX,Apparel & Accessories,Oversize,"ART3,Oversize,C",FALSE,Color,Marfil,Talla,M,PM-OS-08-Marfil-M,230,shopify,2,65000.0,,TRUE,TRUE,,Crop top PM-OS-08
+pm-os-08-crop-top,,,,Apparel & Accessories,,"ART3,Oversize,C",FALSE,Color,Negro,Talla,M,PM-OS-08-Negro-M,230,shopify,1,65000.0,,TRUE,TRUE,,
+pm-os-09-crop-top,Crop top PM-OS-09,<p>Prenda ART3 Crop top. Gramaje: 260.0 g. Referencia PM-OS-09.</p>,IBK,Apparel & Accessories,Oversize,"ART3,Oversize,A",FALSE,Color,Marfil,Talla,S,PM-OS-09-Marfil-S,260,shopify,2,65000.0,,TRUE,TRUE,,Crop top PM-OS-09
+pm-os-09-crop-top,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Marfil,Talla,M,PM-OS-09-Marfil-M,260,shopify,1,65000.0,,TRUE,TRUE,,
+pm-os-09-crop-top,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,S,PM-OS-09-Negro-S,260,shopify,4,65000.0,,TRUE,TRUE,,
+pm-os-09-crop-top,,,,Apparel & Accessories,,"ART3,Oversize,A",FALSE,Color,Negro,Talla,M,PM-OS-09-Negro-M,260,shopify,1,65000.0,,TRUE,TRUE,,
+pm-os-10-line,Line PM-OS-10,<p>Prenda ART3 Line. Gramaje: 270.0 g. Referencia PM-OS-10.</p>,IBK,Apparel & Accessories,Oversize,"ART3,Oversize,C",FALSE,Color,Marfil,Talla,L,PM-OS-10-Marfil-L,270,shopify,1,80000.0,,TRUE,TRUE,,Line PM-OS-10
+pm-os-10-line,,,,Apparel & Accessories,,"ART3,Oversize,C",FALSE,Color,Negro,Talla,M,PM-OS-10-Negro-M,270,shopify,3,80000.0,,TRUE,TRUE,,
+pm-os-10-line,,,,Apparel & Accessories,,"ART3,Oversize,C",FALSE,Color,Negro,Talla,S,PM-OS-10-Negro-S,270,shopify,0,80000.0,,TRUE,TRUE,,
+pm-os-10-line,,,,Apparel & Accessories,,"ART3,Oversize,C",FALSE,Color,Negro,Talla,L,PM-OS-10-Negro-L,270,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-10-line,,,,Apparel & Accessories,,"ART3,Oversize,C",FALSE,Color,Verde oscuro,Talla,M,PM-OS-10-Verde oscuro-M,270,shopify,0,80000.0,,TRUE,TRUE,,
+pm-os-10-line,,,,Apparel & Accessories,,"ART3,Oversize,C",FALSE,Color,Rojo,Talla,S,PM-OS-10-Rojo-S,270,shopify,1,80000.0,,TRUE,TRUE,,
+pm-os-10-line,,,,Apparel & Accessories,,"ART3,Oversize,C",FALSE,Color,Rojo,Talla,M,PM-OS-10-Rojo-M,270,shopify,3,80000.0,,TRUE,TRUE,,
+pm-os-10-line,,,,Apparel & Accessories,,"ART3,Oversize,C",FALSE,Color,Rojo,Talla,L,PM-OS-10-Rojo-L,270,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-11-camiseta-acid,Camiseta acid PM-OS-11,<p>Prenda ART3 Camiseta acid. Gramaje: 250.0 g. Referencia PM-OS-11.</p>,IBK,Apparel & Accessories,Oversize,"ART3,Oversize,B",FALSE,Color,Azul claro,Talla,M,PM-OS-11-Azul claro-M,250,shopify,1,80000.0,,TRUE,TRUE,,Camiseta acid PM-OS-11
+pm-os-11-camiseta-acid,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Azul claro,Talla,L,PM-OS-11-Azul claro-L,250,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-11-camiseta-acid,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Azul rey,Talla,S,PM-OS-11-Azul rey-S,250,shopify,0,80000.0,,TRUE,TRUE,,
+pm-os-11-camiseta-acid,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Gris raton,Talla,L,PM-OS-11-Gris raton-L,250,shopify,3,80000.0,,TRUE,TRUE,,
+pm-os-11-camiseta-acid,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Gris raton,Talla,M,PM-OS-11-Gris raton-M,250,shopify,0,80000.0,,TRUE,TRUE,,
+pm-os-11-camiseta-acid,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Negro,Talla,M,PM-OS-11-Negro-M,250,shopify,3,80000.0,,TRUE,TRUE,,
+pm-os-11-camiseta-acid,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,Negro,Talla,L,PM-OS-11-Negro-L,250,shopify,0,80000.0,,TRUE,TRUE,,
+pm-os-11-camiseta-acid,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,VINO TINTO,Talla,M,PM-OS-11-VINO TINTO-M,250,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-11-camiseta-acid,,,,Apparel & Accessories,,"ART3,Oversize,B",FALSE,Color,VINO TINTO,Talla,L,PM-OS-11-VINO TINTO-L,250,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-12-tank-acid,Tank acid PM-OS-12,<p>Prenda ART3 Tank acid. Gramaje: 250.0 g. Referencia PM-OS-12.</p>,IBK,Apparel & Accessories,Esqueleto,"ART3,Esqueleto,C",FALSE,Color,Gris raton,Talla,M,PM-OS-12-Gris raton-M,250,shopify,2,70000.0,,TRUE,TRUE,,Tank acid PM-OS-12
+pm-os-12-tank-acid,,,,Apparel & Accessories,,"ART3,Esqueleto,C",FALSE,Color,Negro,Talla,M,PM-OS-12-Negro-M,250,shopify,2,70000.0,,TRUE,TRUE,,
+pm-os-12-tank-acid,,,,Apparel & Accessories,,"ART3,Esqueleto,C",FALSE,Color,Negro,Talla,L,PM-OS-12-Negro-L,250,shopify,1,70000.0,,TRUE,TRUE,,
+pm-os-13-crop-top-acid,Crop top acid PM-OS-13,<p>Prenda ART3 Crop top acid. Gramaje: 240.0 g. Referencia PM-OS-13.</p>,IBK,Apparel & Accessories,Esqueleto,"ART3,Esqueleto,C",FALSE,Color,Gris raton,Talla,S,PM-OS-13-Gris raton-S,240,shopify,2,70000.0,,TRUE,TRUE,,Crop top acid PM-OS-13
+pm-os-13-crop-top-acid,,,,Apparel & Accessories,,"ART3,Esqueleto,C",FALSE,Color,Gris raton,Talla,M,PM-OS-13-Gris raton-M,240,shopify,2,70000.0,,TRUE,TRUE,,
+pm-os-13-crop-top-acid,,,,Apparel & Accessories,,"ART3,Esqueleto,C",FALSE,Color,Verde Militar,Talla,S,PM-OS-13-Verde Militar-S,240,shopify,2,70000.0,,TRUE,TRUE,,
+pm-os-13-crop-top-acid,,,,Apparel & Accessories,,"ART3,Esqueleto,C",FALSE,Color,Verde Militar,Talla,M,PM-OS-13-Verde Militar-M,240,shopify,2,70000.0,,TRUE,TRUE,,
+pm-os-14-buzo-aritex,Buzo aritex PM-OS-14,<p>Prenda ART3 Buzo aritex. Gramaje: 300.0 g. Referencia PM-OS-14.</p>,ARITEX,Apparel & Accessories,Buzo,"ART3,Buzo,A",FALSE,Color,AZUL NAVAL,Talla,M,PM-OS-14-AZUL NAVAL-M,300,shopify,1,110000.0,,TRUE,TRUE,,Buzo aritex PM-OS-14
+pm-os-14-buzo-aritex,,,,Apparel & Accessories,,"ART3,Buzo,A",FALSE,Color,AZUL NAVAL,Talla,L,PM-OS-14-AZUL NAVAL-L,300,shopify,1,110000.0,,TRUE,TRUE,,
+pm-os-14-buzo-aritex,,,,Apparel & Accessories,,"ART3,Buzo,A",FALSE,Color,Marfil,Talla,M,PM-OS-14-Marfil-M,300,shopify,0,110000.0,,TRUE,TRUE,,
+pm-os-14-buzo-aritex,,,,Apparel & Accessories,,"ART3,Buzo,A",FALSE,Color,Marfil,Talla,L,PM-OS-14-Marfil-L,300,shopify,0,110000.0,,TRUE,TRUE,,
+pm-os-14-buzo-aritex,,,,Apparel & Accessories,,"ART3,Buzo,A",FALSE,Color,Negro,Talla,M,PM-OS-14-Negro-M,300,shopify,0,110000.0,,TRUE,TRUE,,
+pm-os-14-buzo-aritex,,,,Apparel & Accessories,,"ART3,Buzo,A",FALSE,Color,Negro,Talla,4.0,PM-OS-14-Negro-4.0,300,shopify,0,110000.0,,TRUE,TRUE,,
+pm-os-14-buzo-aritex,,,,Apparel & Accessories,,"ART3,Buzo,A",FALSE,Color,Negro,Talla,S,PM-OS-14-Negro-S,300,shopify,1,110000.0,,TRUE,TRUE,,
+pm-os-14-buzo-aritex,,,,Apparel & Accessories,,"ART3,Buzo,A",FALSE,Color,Negro,Talla,L,PM-OS-14-Negro-L,300,shopify,0,110000.0,,TRUE,TRUE,,
+pm-os-15-camiseta-pato,Camiseta pato PM-OS-15,<p>Prenda ART3 Camiseta pato. Gramaje: 180.0 g. Referencia PM-OS-15.</p>,IBK,Apparel & Accessories,Camiseta,"ART3,Camiseta,C",FALSE,Color,Negro,Talla,M,PM-OS-15-Negro-M,180,shopify,0,50000.0,,TRUE,TRUE,,Camiseta pato PM-OS-15
+pm-os-16-buzo-sin-capota,Buzo sin capota PM-OS-16,<p>Prenda ART3 Buzo sin capota. Gramaje: 300.0 g. Referencia PM-OS-16.</p>,IBK,Apparel & Accessories,Buzo,"ART3,Buzo,C",FALSE,Color,Negro,Talla,S,PM-OS-16-Negro-S,300,shopify,0,100000.0,,TRUE,TRUE,,Buzo sin capota PM-OS-16
+pm-os-17-camiseta-mujer,Camiseta mujer PM-OS-17,<p>Prenda ART3 Camiseta mujer. Gramaje: 260.0 g. Referencia PM-OS-17.</p>,ARITEX,Apparel & Accessories,Camiseta,"ART3,Camiseta,A",FALSE,Color,Marfil,Talla,S,PM-OS-17-Marfil-S,260,shopify,2,60000.0,,TRUE,TRUE,,Camiseta mujer PM-OS-17
+pm-os-17-camiseta-mujer,,,,Apparel & Accessories,,"ART3,Camiseta,A",FALSE,Color,Marfil,Talla,M,PM-OS-17-Marfil-M,260,shopify,0,60000.0,,TRUE,TRUE,,
+pm-os-17-camiseta-mujer,,,,Apparel & Accessories,,"ART3,Camiseta,A",FALSE,Color,Negro,Talla,M,PM-OS-17-Negro-M,260,shopify,0,60000.0,,TRUE,TRUE,,
+pm-os-18-qatar-fit,QATAR FIT PM-OS-18,<p>Prenda ART3 QATAR FIT. Gramaje: 260.0 g. Referencia PM-OS-18.</p>,IBK,Apparel & Accessories,Camiseta,"ART3,Camiseta,B",FALSE,Color,TAUPE,Talla,S,PM-OS-18-TAUPE-S,260,shopify,2,80000.0,,TRUE,TRUE,,QATAR FIT PM-OS-18
+pm-os-19-peru,peru PM-OS-19,<p>Prenda ART3 peru. Gramaje: 250.0 g. Referencia PM-OS-19.</p>,IBK,Apparel & Accessories,Camiseta,"ART3,Camiseta,C",FALSE,Color,Rojo,Talla,S,PM-OS-19-Rojo-S,250,shopify,2,80000.0,,TRUE,TRUE,,peru PM-OS-19
+pm-os-19-peru,,,,Apparel & Accessories,,"ART3,Camiseta,C",FALSE,Color,Rojo,Talla,M,PM-OS-19-Rojo-M,250,shopify,2,80000.0,,TRUE,TRUE,,
+pm-os-19-peru,,,,Apparel & Accessories,,"ART3,Camiseta,C",FALSE,Color,Rojo,Talla,L,PM-OS-19-Rojo-L,250,shopify,2,80000.0,,TRUE,TRUE,,

@@ -1,0 +1,10 @@
+<main class="catalog">
+  <div class="section-head"><div><small>COLECCIÓN</small><h1>{{ collection.title }}</h1></div><span>{{ collection.products_count }} productos</span></div>
+  <div class="product-grid">
+    {% for product in collection.products %}
+      {% unless product.handle == 'oversize-pm-os-01-tabaco' or product.handle == 'oversize-pm-os-01-negro' or product.handle == 'oversize-pm-os-01-rojo' or product.handle == 'oversize-pm-os-01-blanco' %}
+        <article class="product-card">{% assign card_url = product.url %}{% if product.handle contains 'pm-os-06' %}{% assign card_url = '/products/pm-os-06-hodie-acid' %}{% endif %}<a href="{{ card_url }}"><div class="product-image">{% if product.handle contains 'pm-os-06' %}<img src="https://1101kw-m7.myshopify.com/cdn/shop/files/ImagendeChatGPT5oct2026_18_20_40.png?v=1791242059&width=900" loading="lazy" alt="{{ product.title }}">{% elsif product.featured_image %}{{ product.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: product.title }}{% else %}<span>ART³</span>{% endif %}</div><h3>{{ product.title }}</h3><div class="product-meta"><span>{{ product.price | money }}</span><span>{% if product.available %}Disponible{% else %}Agotado{% endif %}</span></div></a>{% if product.handle == 'pm-os-04-boxy-fit' or product.handle == 'boxy-fit-pm-os-04' %}<div class="art-color-links"><a href="/products/boxy-fit-pm-os-04-beige">Beige</a><a href="/products/boxy-fit-pm-os-04-marfil">Marfil</a><a href="/products/boxy-fit-pm-os-04-negro">Negro</a></div>{% endif %}</article>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</main>
